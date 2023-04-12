@@ -1,0 +1,11 @@
+version: "3"
+name: tryroll-challenge
+services:
+  gql-api-app:
+    build:
+      context: ../../.
+      dockerfile: cmd/gql-api/Dockerfile
+    depends_on:
+      - service
+    ports:
+      - 8888:8888

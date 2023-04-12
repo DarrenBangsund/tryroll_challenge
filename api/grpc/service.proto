@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option go_package = "pkg/grpc";
+package grpc;
+
+message ERC20Tx {
+  string to = 1;
+  string from = 2;
+  string amount = 3;
+  string hash = 4;
+}
+
+message GetERC20TxReq {
+  string amount = 1;
+  string to = 2;
+  string from = 3;
+  string limit = 4;
+  string offset = 5;
+}
+message GetERC20TxRes { repeated ERC20Tx txs = 1; }
+
+message GetERC20TokenTxWithToAndFromReq {
+  string to = 1;
+  string from = 2;
+}
+message GetERC20TokenTxWithToAndFromRes { repeated ERC20Tx txs = 1; }
+
+service TryRollService {
+  rpc GetERC20Tx(GetERC20TxReq) returns (GetERC20TxRes);
+}

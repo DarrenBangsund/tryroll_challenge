@@ -1,0 +1,10 @@
+schema:
+  - ./api/graph/schema/*.graphql
+
+exec:
+  filename: ./cmd/gql-api/internal/graph/generated/generated.go
+  package: generated
+
+model:
+  filename: ./cmd/gql-api/internal/graph/generated/models.go
+  package: generated

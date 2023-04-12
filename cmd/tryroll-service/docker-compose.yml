@@ -1,0 +1,9 @@
+version: "3"
+name: tryroll-challenge
+services:
+  service:
+    build:
+      context: ../../.
+      dockerfile: cmd/tryroll-service/Dockerfile
+    expose:
+      - 8002:8002

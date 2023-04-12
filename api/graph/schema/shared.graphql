@@ -1,0 +1,22 @@
+type ERC20Tx {
+  to: String!
+  from: String!
+  amount: String!
+  hash: String!
+}
+
+input GetERC20TxReq {
+  amount: String
+  to: String
+  from: String
+  limit: String
+  offset: String
+}
+
+type GetERC20TxRes {
+  txs: [ERC20Tx]!
+}
+
+type Query {
+  getERC20Tx(input: GetERC20TxReq!): GetERC20TxRes!
+}
